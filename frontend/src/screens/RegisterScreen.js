@@ -7,6 +7,10 @@ import MessageBox from '../components/MessageBox';
 
 export default function RegisterScreen(props){
     	
+    const [password,setPassword]=useState();
+    const [confirmPassword,setConfirmPassword]=useState();
+    const [name,setName]=useState();
+    const [email,setEmail]=useState();
 
     const redirect=props.location.search ? props.location.search.split('=') : '/'
     const userRegister=useSelector(state=>state.userRegister);

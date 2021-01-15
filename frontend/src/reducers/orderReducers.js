@@ -9,19 +9,18 @@ export const orderCreateReducer=(state={},action)=>{
         case ORDER_CREATE_FAILED:
             return {loading:false,error:action.payload};
         case ORDER_CREATE_RESET:
-            return{}
+            return{};
     
         default:return state;
     }
 }
 
-export const orderDetailsReducer=(state={loading:true,order:{}},action)=>{
+export const orderDetailsReducer=(state={loading:true},action)=>{
     switch (action.type) {
         case ORDER_DETAILS_REQUEST:
             return {loading:true};
 
         case ORDER_DETAILS_SUCCESS:
-            console.log(action.payload);
             return {loading:false,order:action.payload};
 
         case ORDER_DETAILS_FAIL:

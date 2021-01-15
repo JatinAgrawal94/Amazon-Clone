@@ -1,15 +1,10 @@
-    import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rating from '../components/Rating';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingBox from '../components/LoadingBox.js';
 import MessageBox from '../components/MessageBox.js';
 import { detailsProduct } from '../actions/productActions';
-import store from '../store';
-import CartScreen from './CartScreen';
-import Product from '../components/Product';
-import App from '../App';
-
 
 export default function ProductScreen(props){
     const dispatch=useDispatch();

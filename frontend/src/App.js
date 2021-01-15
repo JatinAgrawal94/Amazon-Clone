@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Link, Route,Switch} from 'react-router-dom';
+import {BrowserRouter, Link, Route} from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
