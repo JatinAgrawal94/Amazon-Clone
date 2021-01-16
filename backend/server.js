@@ -13,10 +13,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-// console.log(process.env.MONGODB_URL);
+console.log(process.env.MONGODB_URL);
 
 // process.env.MONGODB_URL || 'mongodb://localhost/amazona'
-mongoose.connect('mongodb+srv://JatinAgrawal:jatin123@mern.p212t.mongodb.net/amazona?retryWrites=true&w=majority',{
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true,
