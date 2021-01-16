@@ -13,14 +13,17 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-console.log(process.env.MONGODB_URL);
+// console.log(process.env.MONGODB_URL);
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona',{
+// process.env.MONGODB_URL || 'mongodb://localhost/amazona'
+mongoose.connect('mongodb+srv://JatinAgrawal:jatin123@mern.p212t.mongodb.net/amazona?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
-    useCreateIndex:true
+    useCreateIndex:true,
+    useFindAndModify:false
 });
-mongoose.set('useFindAndModify', false);
+
+
 app.get('/signin',(req,res)=>{
     res.send();
 })
