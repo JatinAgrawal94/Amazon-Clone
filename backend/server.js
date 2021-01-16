@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona',{
     useUnifiedTopology:true,
     useCreateIndex:true
 });
-
+mongoose.set('useFindAndModify', false);
 app.get('/signin',(req,res)=>{
     res.send();
 })
