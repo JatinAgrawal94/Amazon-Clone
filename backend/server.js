@@ -13,6 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+console.log(process.env.MONGODB_URL);
+
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
