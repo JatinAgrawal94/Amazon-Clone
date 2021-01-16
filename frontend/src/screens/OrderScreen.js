@@ -91,7 +91,7 @@ export default function OrderScreen(props){
                                             <img src={item.image} alt={item.name} className="small" />
                                         </div>
                                         <div className="min-30">
-                                            <Link to={`https://amazon-clone-jatin.netlify.app/product/${item.product}`}>{item.name}</Link>
+                                            <Link to={`/product/${item.product}`} replace>{item.name}</Link>
                                         </div>
                                         <div>
                                            {item.qty} x ${item.price} = ${item.qty*item.price}
