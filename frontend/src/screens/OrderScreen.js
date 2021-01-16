@@ -15,7 +15,7 @@ export default function OrderScreen(props){
     const dispatch=useDispatch();
     useEffect(()=>{
         const addPayPalScript=async()=>{
-            const {data}=await Axios.get('/api/config/paypal');
+            const {data}=await Axios.get('https://amazon-cloone.herokuapp.com/api/config/paypal');
             const script=document.createElement('script')
             script.type="text/javascript";
             script.src=`https://www.paypal.com/sdk/js?client-id=${data}`;
@@ -91,7 +91,7 @@ export default function OrderScreen(props){
                                             <img src={item.image} alt={item.name} className="small" />
                                         </div>
                                         <div className="min-30">
-                                            <Link to={`product/${item.product}`}>{item.name}</Link>
+                                            <Link to={`https://amazon-clone-jatin.netlify.app/product/${item.product}`}>{item.name}</Link>
                                         </div>
                                         <div>
                                            {item.qty} x ${item.price} = ${item.qty*item.price}
