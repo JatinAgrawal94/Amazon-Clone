@@ -1,7 +1,7 @@
 {
   "homepage":"http://JatinAgrawal94.github.io/Amazon-clone",
   "name": "frontend",
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "https://amazon-cloone.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
