@@ -1,5 +1,4 @@
 {
-  "homepage":"http://JatinAgrawal94.github.io/Amazon-clone",
   "name": "frontend",
   "proxy": "https://amazon-cloone.herokuapp.com",
   "version": "0.1.0",
@@ -21,8 +20,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
