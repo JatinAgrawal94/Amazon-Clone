@@ -1,4 +1,5 @@
 {
+  "homepage": "https://amazon-clone-jatin.netlify.app",
   "name": "frontend",
   "proxy": "https://amazon-cloone.herokuapp.com",
   "version": "0.1.0",
