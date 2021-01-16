@@ -7,7 +7,7 @@ export const listProducts=()=>async (dispatch)=>{
     });
     
     try{
-        const {data}=await Axios.get('/api/products');
+        const {data}=await Axios.get('https://amazon-cloone.herokuapp.com/api/products');
         dispatch({type:PRODUCT_LIST_SUCCESS,payload:data})
     }catch(error){
         dispatch({type:PRODUCT_LIST_FAIL,payload:error.messsage});
@@ -18,7 +18,7 @@ export const listProducts=()=>async (dispatch)=>{
 export const detailsProduct=(productId)=> async(dispatch)=>{
     dispatch({type:PRODUCT_DETAILS_REQUEST,payload:productId});
     try{
-        const {data}=await Axios.get(`/api/products/${productId}`)
+        const {data}=await Axios.get(`https://amazon-cloone.herokuapp.com/api/products/${productId}`)
         dispatch({type:PRODUCT_DETAILS_SUCCESS,payload:data});
         // console.log(data);
     }catch(error){
