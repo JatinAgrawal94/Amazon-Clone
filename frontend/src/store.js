@@ -1,9 +1,9 @@
 import {createStore,compose,applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';  
 import { cartReducer } from './reducers/cartReducers';
-import { orderCreateReducer, orderDetailsReducer } from './reducers/orderReducers';
+import { orderCreateReducer, orderDetailsReducer,orderMineListReducer,orderPayReducer } from './reducers/orderReducers';
 import {productDetailsReducer, productListReducer} from './reducers/productReducers';
-import { userRegisterReducer, userSigninReducer } from './reducers/userReducer';
+import { userDetailsReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer } from './reducers/userReducer';
 
 const initalState={
     userSignin:{
@@ -24,7 +24,11 @@ const reducer=combineReducers({
     userSignin:userSigninReducer,
     userRegister:userRegisterReducer,
     orderCreate:orderCreateReducer,
-    orderDetails:orderDetailsReducer
+    orderDetails:orderDetailsReducer,
+    orderPay:orderPayReducer,
+    orderMineList:orderMineListReducer,
+    userDetails:userDetailsReducer,
+    userUpdateProfile:userUpdateProfileReducer
 });
 
 // To start redux dev tools in chrome 
