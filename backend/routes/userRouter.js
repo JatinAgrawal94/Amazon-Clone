@@ -7,6 +7,7 @@ import {generateToken} from '../util.js';
 import { isAuth } from '../util.js';
 const userRouter=express.Router();
 
+
 userRouter.get('/seed',expressAsyncHandler( async (req,res)=>{
 
         const createdUsers=await User.insertMany(data.users);
@@ -44,7 +45,7 @@ userRouter.post('/register',expressAsyncHandler(async (req,res)=>{
     });
 }))
 
-userRouter.get('/:id',expressAsyncHandler(async(req,res)=>{
+userRouter.get('/:id',isAuth,expressAsyncHandler(async(req,res)=>{
     const user=await User.findById(req.params.id);
     if(user){
         res.send(user);
@@ -55,6 +56,7 @@ userRouter.get('/:id',expressAsyncHandler(async(req,res)=>{
 
 userRouter.put('/profile',isAuth,expressAsyncHandler(async(req,res)=>{
     const user=await User.findById(req.user._id);
+
     if(user){
         user.name=req.body.name || user.name;
         user.email=req.body.email || user.email;
