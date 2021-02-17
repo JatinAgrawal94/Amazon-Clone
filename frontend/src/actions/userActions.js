@@ -52,12 +52,13 @@ export const register=(name,email,password)=>async(dispatch)=>{
 export const detailsUser=(userId)=>async(dispatch,getState)=>{
     dispatch({type:USER_DETAILS_REQUEST});
     const {userSignin:{userInfo}}=getState();
+    
     try{
         const {data}=await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/${userId}`,
         {
             headers:{Authorization:`Bearer ${userInfo.token}`}
         });
-       
+      
         dispatch({type:USER_DETAILS_SUCCESS,payload:data});
     }catch(error){
         const message=error.response && error.response.data.message 
